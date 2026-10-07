@@ -1,0 +1,998 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tara Brand Kit (print)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#0A0A0A; --graphite:#1A1D1F; --slate:#4A5258; --fog:#E6EBEC; --cloud:#F4F8F7; --white:#fff;
+  --aqua:#46E6F2; --aqua-soft:#7FE9F5; --mint:#36F58A; --mint-soft:#4DF59A; --lime:#D4FF1F; --lilac:#C9B6FF; --error:#FF5A5F;
+  --grad:linear-gradient(135deg,#7FE9F5 0%,#4DF59A 55%,#D4FF1F 100%);
+  --r-s:10px; --r-m:16px; --r-l:28px;
+  --display:'Plus Jakarta Sans',system-ui,sans-serif; --body:Inter,system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  --glow-mint:0 8px 24px rgba(54,245,138,.35); --glow-lime:0 8px 24px rgba(212,255,31,.32);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--cloud);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--aqua);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:800;letter-spacing:-.025em;line-height:1.05}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(244,248,247,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--fog)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:64px}
+.nav .brand{display:flex;align-items:center;gap:10px;font:800 17px var(--display);letter-spacing:-.02em;text-decoration:none}
+.nav .brand svg{width:30px;height:30px}
+.nav ul{display:flex;gap:4px;list-style:none;margin-left:auto}
+.nav li a{display:block;padding:8px 13px;border-radius:99px;text-decoration:none;font-size:14px;font-weight:500;color:var(--slate)}
+.nav li a:hover{background:var(--fog);color:var(--ink)}
+
+/* hero */
+.hero{margin-top:24px;border-radius:36px;background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:72px 64px 72px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;min-height:640px}
+.hero:before{content:"";position:absolute;inset:0;background:
+  radial-gradient(46% 55% at 100% 0%,rgba(201,182,255,.42),transparent 70%),
+  radial-gradient(50% 60% at 0% 30%,rgba(70,230,242,.36),transparent 70%),
+  radial-gradient(60% 55% at 60% 110%,rgba(54,245,138,.42),transparent 70%),
+  radial-gradient(40% 40% at 100% 100%,rgba(226,255,26,.30),transparent 70%)}
+.hero>*{position:relative}
+.hero-logo{width:104px;height:104px;margin-bottom:40px;filter:drop-shadow(0 16px 40px rgba(54,245,138,.5))}
+.hero h1{font-size:clamp(40px,5vw,68px);letter-spacing:-.04em;line-height:.98}
+.hero p{margin-top:22px;max-width:30ch;font-size:19px;line-height:1.5;color:rgba(255,255,255,.78)}
+.hero .row{margin-top:34px}
+.hero-stage{display:grid;place-items:center;min-height:460px}
+
+/* sections */
+section.block{padding:104px 0 0}
+.head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:end;margin-bottom:44px}
+.head h2{font-size:clamp(34px,4.4vw,56px);letter-spacing:-.035em}
+.head p{color:var(--slate);font-size:17px;max-width:52ch}
+.panel{background:#fff;border:1px solid var(--fog);border-radius:var(--r-l);padding:28px;box-shadow:0 1px 2px rgba(10,10,10,.05)}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+/* logo */
+.logo-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px}
+.tile{border-radius:var(--r-l);display:grid;place-items:center;min-height:300px;position:relative;overflow:hidden}
+.tile.big{background:#fff;border:1px solid var(--fog)}
+.tile.big svg{width:180px;height:180px;filter:drop-shadow(0 20px 36px rgba(54,245,138,.38))}
+.tile.dark{background:var(--ink)}
+.tile.dark:before{content:"";position:absolute;inset:0;background:radial-gradient(70% 70% at 50% 120%,rgba(54,245,138,.35),transparent 70%)}
+.tile.dark svg,.tile.grad svg{width:104px;height:104px;position:relative}
+.tile.grad{background:var(--grad)}
+.tile.grad svg{filter:drop-shadow(0 10px 24px rgba(10,10,10,.22))}
+.tile small{position:absolute;left:18px;bottom:14px;font-size:13px;font-weight:500;color:var(--slate)}
+.tile.dark small{color:rgba(255,255,255,.6)}
+.tile.grad small{color:var(--ink)}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+.rule b{display:block;font:700 16px var(--display);margin-bottom:6px;letter-spacing:-.01em}
+.rule p{color:var(--slate);font-size:14.5px}
+.sizes{display:flex;gap:22px;align-items:flex-end;margin-top:16px}
+.sizes figure{display:grid;gap:8px;justify-items:center;font-size:12px;color:var(--slate)}
+.clear{position:relative;width:132px;height:132px;display:grid;place-items:center;border:1.5px dashed var(--aqua);border-radius:12px;background:rgba(70,230,242,.08)}
+.clear svg{width:72px;height:72px}
+.clear span{position:absolute;font:700 11px var(--mono);color:#00696f}
+.clear .t{top:5px;left:50%;transform:translateX(-50%)}.clear .l{left:7px;top:50%;transform:translateY(-50%)}
+
+/* colour */
+.sw-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.sw{grid-column:span 3;border-radius:var(--r-l);overflow:hidden;border:1px solid var(--fog);background:#fff;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:transform .16s ease-out,box-shadow .16s ease-out;appearance:none}
+.sw:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(10,10,10,.08)}
+.sw.wide{grid-column:span 6}
+.sw .chip-area{height:132px;display:flex;align-items:flex-end;padding:14px;position:relative}
+.sw .chip-area em{font:700 12px var(--mono);font-style:normal;letter-spacing:.04em;padding:5px 9px;border-radius:99px;background:rgba(255,255,255,.88);color:var(--ink)}
+.sw .meta{padding:14px 16px 16px}
+.sw .meta b{display:block;font:700 16px var(--display);letter-spacing:-.01em}
+.sw .meta span{font-size:13.5px;color:var(--slate)}
+.ratio{display:flex;height:56px;border-radius:99px;overflow:hidden;border:1px solid var(--fog);margin-top:24px;font:600 13px var(--body)}
+.ratio div{display:flex;align-items:center;justify-content:center}
+.ct{width:100%;border-collapse:collapse;font-size:14.5px}
+.ct th{text-align:left;font-weight:600;color:var(--slate);padding:0 0 12px;font-size:13px}
+.ct td{padding:12px 0;border-top:1px solid var(--fog);vertical-align:middle}
+.ct .pair{display:inline-grid;place-items:center;width:104px;height:38px;border-radius:10px;font:800 15px var(--display)}
+.ct .score{font:700 14px var(--mono)}
+.tag{display:inline-block;font-weight:600;font-size:12.5px;padding:4px 10px;border-radius:99px}
+.tag.ok{background:var(--mint)}.tag.bad{background:var(--error);color:#fff}
+.glow-demo{height:200px;border-radius:var(--r-l);background:var(--ink);position:relative;overflow:hidden;display:grid;place-items:center}
+.glow-demo i{position:absolute;inset:-30%;background:
+  radial-gradient(40% 50% at 20% 20%,rgba(70,230,242,.7),transparent 65%),
+  radial-gradient(40% 50% at 80% 30%,rgba(201,182,255,.6),transparent 65%),
+  radial-gradient(50% 50% at 50% 100%,rgba(54,245,138,.75),transparent 65%),
+  radial-gradient(30% 40% at 100% 100%,rgba(226,255,26,.6),transparent 65%);filter:blur(10px)}
+.glow-demo b{position:relative;font:800 26px var(--display);color:#fff;letter-spacing:-.03em}
+
+/* type */
+.type-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.spec{grid-column:span 2;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.spec .panel{display:grid;gap:10px;align-content:start}
+.aa{font-size:112px;line-height:.9;letter-spacing:-.04em}
+.scale{display:grid;gap:0}
+.scale>div{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid var(--fog)}
+.scale>div:first-child{border-top:0}
+.scale small{font:500 12px var(--mono);color:var(--slate);line-height:1.5}
+
+/* shape + depth */
+.shape-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:end}
+.shape{display:grid;gap:12px;justify-items:start}
+.shape i{display:block;background:var(--grad);border:1px solid rgba(10,10,10,.08)}
+.depth{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.depth>div{background:#fff;border:1px solid var(--fog);border-radius:var(--r-m);padding:22px;min-height:150px;display:grid;align-content:space-between}
+.depth b{font:700 15px var(--display)}
+.depth span{font-size:13px;color:var(--slate)}
+
+/* components */
+.comp{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.comp .panel h4{font-size:17px;margin-bottom:18px;letter-spacing:-.015em}
+.btn{font:700 16px var(--display);padding:15px 24px;border-radius:var(--r-m);border:1.5px solid transparent;cursor:pointer;transition:transform .12s ease-out,box-shadow .16s,background .16s;letter-spacing:-.01em;min-height:48px}
+.btn:active{transform:scale(.97)}
+.btn.p{background:var(--grad);color:var(--ink);box-shadow:var(--glow-mint)}
+.btn.p:hover{box-shadow:0 10px 30px rgba(54,245,138,.5)}
+.btn.s{background:var(--ink);color:#fff}
+.btn.s:hover{background:var(--graphite)}
+.btn.o{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn.o:hover{background:rgba(127,233,245,.2)}
+.btn.g{background:transparent;color:var(--ink)}
+.btn.g:hover{background:var(--cloud)}
+.btn[disabled]{background:var(--fog);color:#7c868b;box-shadow:none;cursor:not-allowed;border-color:transparent}
+.chip{display:inline-flex;align-items:center;gap:6px;font:600 13px var(--body);padding:6px 12px;border-radius:99px;color:var(--ink)}
+.chip.aqua{background:var(--aqua)}.chip.mint{background:var(--mint)}.chip.lime{background:var(--lime)}.chip.lilac{background:var(--lilac)}
+.field{display:grid;gap:6px;font-size:13px;font-weight:600;min-width:220px;flex:1}
+.field input{font:400 16px var(--body);padding:12px 16px;border-radius:var(--r-s);border:1px solid var(--fog);background:#fff;color:var(--ink);outline:none;transition:border-color .12s,box-shadow .12s}
+.field input{width:100%;min-width:0}
+.field input::placeholder{color:var(--slate)}
+.field input:focus,.field input.f{border-color:var(--aqua);box-shadow:0 0 0 2px #fff,0 0 0 4px var(--aqua)}
+.field input.e{border-color:var(--error)}
+.field small{font-weight:500;color:#b3262b}
+.check{display:inline-flex;align-items:center;gap:10px;font-size:15px;cursor:pointer}
+.check input{appearance:none;width:22px;height:22px;border:1.5px solid var(--ink);border-radius:7px;display:grid;place-items:center;background:#fff;cursor:pointer}
+.check input[type=radio]{border-radius:50%}
+.check input:checked{background:var(--mint)}
+.check input[type=checkbox]:checked:after{content:"";width:10px;height:5px;border-left:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);transform:rotate(-45deg) translate(1px,-1px)}
+.check input[type=radio]:checked:after{content:"";width:9px;height:9px;border-radius:50%;background:var(--ink)}
+.switch{appearance:none;width:52px;height:30px;border-radius:99px;background:var(--fog);position:relative;cursor:pointer;transition:background .18s}
+.switch:after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(10,10,10,.25);transition:transform .18s cubic-bezier(.3,1.4,.5,1)}
+.switch:checked{background:var(--mint)}.switch:checked:after{transform:translateX(22px)}
+.ecard{border:1px solid var(--fog);border-radius:var(--r-m);overflow:hidden;background:#fff;max-width:340px;box-shadow:0 1px 2px rgba(10,10,10,.05)}
+.ecard .strip{height:4px;background:var(--grad)}
+.ecard .art{display:block;height:150px;width:100%}
+.ecard .body{padding:18px 20px 20px;display:grid;gap:6px}
+.ecard h5{font:800 20px var(--display);letter-spacing:-.02em}
+.ecard p{color:var(--slate);font-size:14px}
+.ecard .foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.ecard .foot b{font:800 18px var(--display);letter-spacing:-.02em}
+
+/* phones */
+.screens{display:grid;grid-template-columns:repeat(3,1fr);gap:72px 28px;justify-items:center}
+.fig{display:grid;gap:22px;justify-items:center;width:100%;max-width:400px}
+.fig figcaption{width:100%;max-width:360px}
+.fig figcaption b{display:block;font:800 21px var(--display);letter-spacing:-.025em;margin-bottom:4px}
+.fig figcaption p{color:var(--slate);font-size:14.5px}
+.fig dl{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;margin-top:12px;font-size:13px;border-top:1px solid var(--fog);padding-top:12px}
+.fig dt{color:var(--slate)}.fig dd{font-weight:600}
+.phone{width:372px;height:780px;border-radius:58px;padding:11px;background:#000;position:relative;box-shadow:0 0 0 1.5px #2b2f31,0 30px 70px rgba(10,10,10,.28),inset 0 0 0 2px #1a1d1f;flex:none}
+.scr{width:100%;height:100%;border-radius:47px;overflow:hidden;position:relative;display:flex;flex-direction:column;font-family:var(--body)}
+.scr.dark{background:var(--ink);color:#fff}
+.scr.light{background:var(--cloud);color:var(--ink)}
+.scr .ambient{position:absolute;inset:0;pointer-events:none}
+.dark .ambient{background:
+  radial-gradient(60% 34% at 100% 0%,rgba(201,182,255,.34),transparent 70%),
+  radial-gradient(60% 34% at 0% 22%,rgba(70,230,242,.28),transparent 70%),
+  radial-gradient(70% 36% at 50% 104%,rgba(54,245,138,.26),transparent 70%)}
+.light .ambient{background:
+  radial-gradient(60% 24% at 100% 0%,rgba(201,182,255,.28),transparent 70%),
+  radial-gradient(60% 24% at 0% 0%,rgba(127,233,245,.40),transparent 70%)}
+.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:116px;height:34px;border-radius:99px;background:#000;z-index:20}
+.status{position:absolute;top:0;left:0;right:0;height:59px;display:flex;justify-content:space-between;align-items:center;padding:6px 34px 0 38px;font:600 16px var(--body);z-index:19}
+.status .r{display:flex;gap:6px;align-items:center}
+.status svg{width:18px;height:12px}
+.home-ind{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:128px;height:5px;border-radius:9px;background:currentColor;opacity:.9;z-index:20}
+.body-s{flex:1;position:relative;z-index:2;padding:66px 20px 0;overflow:hidden;display:flex;flex-direction:column}
+.ic{width:22px;height:22px;display:inline-block;flex:none}
+.circle-btn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(12px);color:#fff;position:relative}
+.light .circle-btn{background:#fff;border-color:var(--fog);color:var(--ink)}
+.dot{position:absolute;top:9px;right:10px;width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 2px #1d2022}
+.topbar{display:flex;align-items:center;justify-content:space-between}
+.topbar .logo{width:38px;height:38px}
+.topbar .mid{font:700 16px var(--display);letter-spacing:-.01em}
+.h-big{font:800 34px/1 var(--display);letter-spacing:-.035em;margin:20px 0 6px}
+.sub-s{font-size:14px;color:rgba(255,255,255,.64)}
+.light .sub-s{color:var(--slate)}
+.search{display:flex;gap:10px;align-items:center;margin-top:16px;padding:13px 16px;border-radius:var(--r-m);background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.62);font-size:15px}
+.pills{display:flex;gap:8px;margin:14px -20px 0;padding:0 20px;overflow:hidden}
+.pill{font:600 13px var(--body);padding:8px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.22);color:#fff;white-space:nowrap}
+.pill.on{background:var(--mint);color:var(--ink);border-color:var(--mint)}
+.feature{margin-top:16px;border-radius:var(--r-l);overflow:hidden;position:relative;height:238px;box-shadow:var(--glow-lime)}
+.feature svg.art{position:absolute;inset:0;width:100%;height:100%}
+.feature .over{position:absolute;inset:auto 0 0 0;padding:16px 16px 16px;background:linear-gradient(180deg,transparent,rgba(10,10,10,.82) 60%);color:#fff}
+.feature h4{font:800 26px/1 var(--display);letter-spacing:-.03em}
+.feature .meta{font-size:13.5px;margin-top:5px;color:rgba(255,255,255,.85)}
+.feature .tagp{position:absolute;top:14px;left:14px;font:700 12px var(--body);background:var(--lime);color:var(--ink);padding:5px 11px;border-radius:99px}
+.feature .price{position:absolute;top:12px;right:12px;background:rgba(10,10,10,.72);backdrop-filter:blur(8px);color:#fff;border-radius:99px;padding:6px 12px;font:700 13px var(--display)}
+.sect{display:flex;justify-content:space-between;align-items:baseline;margin:20px 0 4px;font:800 18px var(--display);letter-spacing:-.02em}
+.sect small{font:600 13px var(--body);color:var(--aqua)}
+.row-ev{display:flex;gap:12px;align-items:center;padding:10px 0}
+.row-ev .th{width:58px;height:58px;border-radius:14px;overflow:hidden;flex:none;position:relative}
+.row-ev .th svg{width:100%;height:100%;display:block}
+.row-ev b{display:block;font:700 15.5px var(--display);letter-spacing:-.015em}
+.row-ev span.s{font-size:13px;color:rgba(255,255,255,.62)}
+.row-ev .chip{margin-left:auto;font-size:12px;padding:5px 10px}
+.tabbar{position:absolute;left:18px;right:18px;bottom:26px;z-index:10;height:66px;border-radius:99px;display:flex;justify-content:space-around;align-items:center;padding:0 10px;background:rgba(36,40,42,.72);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.12)}
+.light .tabbar{background:rgba(255,255,255,.82);border-color:var(--fog);box-shadow:0 12px 32px rgba(10,10,10,.08)}
+.tabbar span{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:rgba(255,255,255,.7)}
+.light .tabbar span{color:var(--slate)}
+.tabbar span.on{background:var(--grad);color:var(--ink);box-shadow:var(--glow-mint)}
+.cta-bar{position:absolute;left:0;right:0;bottom:0;z-index:10;padding:16px 20px 30px;display:flex;gap:14px;align-items:center;background:linear-gradient(180deg,rgba(10,10,10,0),rgba(10,10,10,.92) 38%)}
+.light .cta-bar{background:linear-gradient(180deg,rgba(244,248,247,0),rgba(244,248,247,.96) 40%)}
+.cta-bar .pr{display:grid;line-height:1.1}
+.cta-bar .pr small{font-size:12px;opacity:.65}
+.cta-bar .pr b{font:800 22px var(--display);letter-spacing:-.025em}
+.cta-bar .btn{flex:1}
+
+/* detail */
+.hero-art{position:absolute;inset:0 0 auto 0;height:370px}
+.hero-art svg{width:100%;height:100%;display:block}
+.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.1) 0%,rgba(10,10,10,0) 30%,var(--ink) 98%)}
+.detail-top{display:flex;justify-content:space-between;position:relative;z-index:3}
+.detail-title{margin-top:206px;position:relative;z-index:3}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.facts div{padding:11px 12px;border-radius:var(--r-m);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:grid;gap:1px}
+.facts small{font-size:11.5px;color:rgba(255,255,255,.58)}
+.facts b{font:700 15px var(--display)}
+.tier{display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:var(--r-m);border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);margin-top:8px;position:relative}
+.tier.sel{border:1.5px solid transparent;background:linear-gradient(#26292b,#26292b) padding-box,var(--grad) border-box}
+.tier .rd{width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);display:grid;place-items:center;flex:none}
+.tier.sel .rd{background:var(--mint);border-color:var(--mint)}
+.tier.sel .rd:after{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink)}
+.tier b{display:block;font:700 15.5px var(--display)}
+.tier small{font-size:12.5px;color:rgba(255,255,255,.6)}
+.tier .p{margin-left:auto;text-align:right;font:800 18px var(--display);letter-spacing:-.02em;display:grid;gap:3px;justify-items:end}
+.tier .p .chip{font-size:11px;padding:2px 8px}
+
+/* seats */
+.legend{display:flex;gap:14px;margin-top:14px;font-size:12.5px;color:rgba(255,255,255,.72)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.map{margin:6px -6px 0;position:relative}
+.map svg{width:100%;display:block;overflow:visible}
+.sheet{position:absolute;left:12px;right:12px;bottom:14px;z-index:10;border-radius:30px;padding:18px 18px 22px;background:rgba(30,34,36,.82);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.14);box-shadow:0 20px 48px rgba(0,0,0,.5)}
+.sheet .grab{width:38px;height:4px;border-radius:9px;background:rgba(255,255,255,.3);margin:-6px auto 14px}
+.sheet .l1{display:flex;justify-content:space-between;align-items:center}
+.sheet h5{font:800 19px var(--display);letter-spacing:-.025em}
+.sheet p{font-size:13px;color:rgba(255,255,255,.64);margin-top:2px}
+.sheet .timer{font:700 13px var(--display);background:var(--aqua);color:var(--ink);border-radius:99px;padding:6px 11px;display:inline-flex;gap:6px;align-items:center}
+.sheet .btn{width:100%;margin-top:16px}
+.seatpair{display:flex;gap:8px;margin-top:12px}
+.seatpair span{flex:1;padding:9px 12px;border-radius:12px;background:rgba(255,255,255,.08);font-size:13px;display:flex;justify-content:space-between}
+.seatpair b{font-weight:700}
+
+/* checkout */
+.ordercard{margin-top:16px;border-radius:var(--r-l);background:#fff;border:1px solid var(--fog);padding:14px;display:flex;gap:14px;align-items:center;box-shadow:0 1px 2px rgba(10,10,10,.05)}
+.ordercard .th{width:76px;height:76px;border-radius:16px;overflow:hidden;flex:none}
+.ordercard .th svg{width:100%;height:100%;display:block}
+.ordercard b{display:block;font:800 17px/1.1 var(--display);letter-spacing:-.02em}
+.ordercard span{display:block;font-size:13px;color:var(--slate);margin-top:3px}
+.lines{margin-top:14px;padding:6px 18px;border-radius:var(--r-l);background:#fff;border:1px solid var(--fog)}
+.lines div{display:flex;justify-content:space-between;padding:11px 0;font-size:14.5px;border-top:1px solid var(--fog)}
+.lines div:first-child{border-top:0}
+.lines .disc{align-items:center}
+.lines .disc em{font-style:normal;font-weight:600;font-size:12.5px;background:var(--mint);padding:3px 9px;border-radius:99px;margin-left:8px}
+.lines .tot{font:800 20px var(--display);letter-spacing:-.025em;padding:14px 0 10px}
+.pay{margin-top:14px;display:grid;gap:8px}
+.pay .m{display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:var(--r-m);background:#fff;border:1px solid var(--fog);font-weight:600;font-size:15px;position:relative}
+.pay .m.sel{border-color:transparent;box-shadow:0 0 0 2px var(--ink)}
+.pay .m .lg{width:42px;height:28px;border-radius:7px;display:grid;place-items:center;font:800 11px var(--display);background:var(--ink);color:#fff;flex:none}
+.pay .m .lg.g2{background:#fff;border:1px solid var(--fog);color:var(--ink)}
+.pay .m .lg.cd{background:var(--grad);color:var(--ink)}
+.pay .m small{display:block;font-weight:400;color:var(--slate);font-size:12.5px}
+.pay .m .rd{margin-left:auto;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center}
+.pay .m.sel .rd{background:var(--mint)}
+.pay .m.sel .rd:after{content:"";width:9px;height:9px;border-radius:50%;background:var(--ink)}
+
+/* ticket pass */
+.pass{--cut:214px;width:100%;max-width:322px;position:relative;color:var(--ink);filter:drop-shadow(0 14px 32px rgba(54,245,138,.34))}
+.pass .in{border-radius:var(--r-l);background:#fff;overflow:hidden;
+  -webkit-mask:radial-gradient(circle 11px at 0 var(--cut),transparent 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 11px at 100% var(--cut),transparent 98%,#000) right/51% 100% no-repeat;
+  mask:radial-gradient(circle 11px at 0 var(--cut),transparent 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 11px at 100% var(--cut),transparent 98%,#000) right/51% 100% no-repeat}
+.pass .top{height:var(--cut);position:relative;overflow:hidden;color:var(--ink)}
+.pass .top>svg{position:absolute;inset:0;width:100%;height:100%}
+.pass .top .txt{position:absolute;inset:0;padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between}
+.pass .top .tp{display:flex;justify-content:space-between;align-items:center}
+.pass .top .chip{background:var(--ink);color:var(--lime);font-size:12px;padding:5px 11px}
+.pass .top h4{font:800 29px/.98 var(--display);letter-spacing:-.035em}
+.pass .top .when{display:flex;gap:18px;margin-top:10px;font-weight:600;font-size:13.5px}
+.pass .top .when span{display:grid;line-height:1.15}.pass .top .when small{font-weight:500;font-size:11.5px;opacity:.7}
+.pass .dash{height:0;border-top:2px dashed #cfd8da;margin:0 22px;position:relative;top:0}
+.pass .bot{padding:20px 22px 20px;display:grid;gap:16px;justify-items:center}
+.qrwrap{position:relative;width:176px;height:176px;display:grid;place-items:center}
+.qrglow{position:absolute;inset:-24px;border-radius:50%;background:
+  radial-gradient(circle at 25% 30%,rgba(70,230,242,.85),transparent 55%),
+  radial-gradient(circle at 75% 35%,rgba(212,255,31,.8),transparent 55%),
+  radial-gradient(circle at 50% 80%,rgba(54,245,138,.9),transparent 55%);filter:blur(18px);animation:drift 7s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate(-8px,-6px) rotate(0deg) scale(1)}100%{transform:translate(8px,6px) rotate(40deg) scale(1.08)}}
+.qrbox{position:relative;width:176px;height:176px;border-radius:20px;background:#fff;padding:12px;box-shadow:0 0 0 1.5px rgba(10,10,10,.08)}
+.qrbox svg{width:100%;height:100%;display:block}
+.seatgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;text-align:center}
+.seatgrid div{display:grid;gap:1px}
+.seatgrid small{font-size:11.5px;color:var(--slate)}
+.seatgrid b{font:800 18px var(--display);letter-spacing:-.02em}
+.code{font:700 11px var(--mono);letter-spacing:.08em;color:var(--slate)}
+.wallets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;width:100%}
+.wallets .btn{padding:13px 8px;font-size:14px;min-height:48px}
+.btn.w{background:#fff;color:var(--ink)}
+.btn.line{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+
+/* merch */
+.cart{display:inline-flex;gap:8px;align-items:center;background:var(--ink);color:#fff;border-radius:99px;padding:9px 14px 9px 12px;font:700 14px var(--display)}
+.cart i{font-style:normal;background:var(--lime);color:var(--ink);border-radius:99px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12px}
+.drop{margin-top:18px;border-radius:var(--r-l);padding:18px;background:var(--grad);position:relative;overflow:hidden;box-shadow:var(--glow-mint)}
+.drop h4{font:800 26px/1 var(--display);letter-spacing:-.035em;max-width:9ch}
+.drop p{font-size:13px;font-weight:600;margin-top:8px}
+.drop svg{position:absolute;right:-14px;bottom:-18px;width:150px;height:150px}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.prod{border-radius:var(--r-m);background:#fff;border:1px solid var(--fog);padding:10px 10px 12px;display:grid;gap:8px}
+.prod .im{height:112px;border-radius:12px;display:grid;place-items:center}
+.prod .im svg{width:88px;height:88px}
+.prod b{font:700 14.5px var(--display);letter-spacing:-.01em}
+.prod .pr{display:flex;justify-content:space-between;align-items:center}
+.prod .pr span{font:800 16px var(--display);letter-spacing:-.02em}
+.prod .add{width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center}
+.prod .add.on{background:var(--mint);color:var(--ink)}
+.sizes-s{display:flex;gap:6px}
+.sizes-s span{font:600 12px var(--body);min-width:28px;text-align:center;padding:4px 0;border-radius:8px;border:1px solid var(--fog)}
+.sizes-s span.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* tokens */
+.tk{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.code-card{border-radius:var(--r-l);background:var(--ink);color:#d9e2e3;overflow:hidden;display:grid;grid-template-rows:auto 1fr}
+.code-card header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.1)}
+.code-card header b{font:700 14px var(--display);color:#fff}
+.code-card .acts{display:flex;gap:8px}
+.mini{font:600 13px var(--body);border:0;border-radius:99px;padding:7px 13px;cursor:pointer;background:var(--grad);color:var(--ink)}
+.mini.alt{background:rgba(255,255,255,.12);color:#fff}
+.code-card pre{font:500 12.5px/1.65 var(--mono);padding:18px;overflow:auto;max-height:520px;color:#c9d6d8}
+.code-card pre .k{color:var(--aqua)}.code-card pre .v{color:var(--lime)}.code-card pre .c{color:#6f7e80}
+.handoff{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+.handoff .panel{padding:22px}
+.handoff b{display:block;font:800 18px var(--display);letter-spacing:-.02em;margin-bottom:8px}
+.handoff p{font-size:14px;color:var(--slate)}
+.handoff code{font:600 12.5px var(--mono);background:var(--cloud);padding:1px 6px;border-radius:6px;color:var(--ink)}
+footer{margin-top:120px;background:var(--ink);color:#fff;padding:56px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px}
+footer svg{width:44px;height:44px}
+footer p{color:rgba(255,255,255,.6);font-size:14px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,24px);opacity:0;background:var(--ink);color:#fff;border-radius:99px;padding:12px 20px;font:600 14px var(--body);z-index:100;box-shadow:0 20px 48px rgba(10,10,10,.25);transition:all .24s cubic-bezier(.2,.9,.3,1);pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--mint);margin-right:9px}
+
+/* icons */
+.icons-bar{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:24px}
+.icons-bar .small{font-size:14px;color:var(--slate)}
+.icon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.icard{border:1px solid var(--fog);border-radius:var(--r-l);background:#fff;overflow:hidden;display:grid;grid-template-rows:auto 1fr;box-shadow:0 1px 2px rgba(10,10,10,.05)}
+.icard .pv{height:196px;display:grid;place-items:center}
+.icard .pv.chk{background:conic-gradient(#e6ecec 25%,#fff 0 50%,#e6ecec 0 75%,#fff 0) 0 0/18px 18px}
+.icard .pv.dk{background:var(--ink)}
+.icard .pv.lt{background:var(--cloud)}
+.icard .pv img{width:120px;height:120px;display:block}
+.icard .pv img.round{border-radius:22.7%;overflow:hidden}
+.icard .inf{padding:16px 18px 18px;display:grid;gap:8px;align-content:start}
+.icard b{font:800 17px var(--display);letter-spacing:-.02em}
+.icard p{font-size:13.5px;color:var(--slate);line-height:1.45}
+.icard .file{font:500 12px var(--mono);color:var(--slate)}
+.dl{display:flex;gap:8px;align-items:center;margin-top:6px}
+.dl select{font:600 13px var(--body);padding:7px 8px;border-radius:99px;border:1px solid var(--fog);background:#fff;color:var(--ink);min-height:34px}
+.mini.ink{background:var(--ink);color:#fff}
+.mini{min-height:34px}
+.rule code{font:600 12.5px var(--mono);background:var(--cloud);padding:1px 6px;border-radius:6px}
+@media (max-width:1180px){.icon-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.icon-grid{grid-template-columns:1fr}}
+
+/* screen fit tuning: every screen keeps its content clear of the tab bar / CTA */
+.h-big{font-size:32px;margin:14px 0 6px}
+.search{margin-top:12px;padding:12px 16px}
+.pills{margin-top:12px}
+.feature{height:204px;margin-top:12px}
+.sect{margin:14px 0 2px}
+.detail-title{margin-top:118px}
+.facts{margin-top:12px}
+.tier.sel{margin-top:12px!important}
+.cta-bar{padding-top:6px}
+.ordercard{margin-top:12px;padding:12px}
+.ordercard .th{width:64px;height:64px}
+.lines{margin-top:12px;padding:4px 18px}
+.lines div{padding:9px 0}
+.lines .tot{padding:12px 0 8px}
+.pay{margin-top:12px;gap:8px}
+.pay .m{padding:10px 14px}
+.drop{margin-top:14px;padding:16px}
+.drop h4{font-size:22px}
+.drop svg{width:120px;height:120px;right:-6px;bottom:-12px}
+.pgrid{margin-top:14px;gap:10px}
+.prod{padding:8px 8px 10px;gap:6px}
+.prod .im{height:92px}
+.prod .im svg{width:72px;height:72px}
+.sheet{padding:16px 16px 20px}
+.map{margin-top:14px}
+
+@media (max-width:1180px){
+  .screens{grid-template-columns:repeat(2,1fr)}
+  .sw{grid-column:span 4}.sw.wide{grid-column:span 8}
+}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;padding:48px 28px;min-height:0}
+  .head,.logo-grid,.rules,.type-grid,.spec,.comp,.tk,.shape-row,.depth,.handoff{grid-template-columns:1fr}
+  .spec{grid-column:auto}
+  .screens{grid-template-columns:1fr}
+  .sw,.sw.wide{grid-column:span 6}
+  .nav ul{display:none}
+  section.block{padding-top:72px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+
+
+/* ---------- print layout: one 1600 x 900 page per section ---------- */
+@page{size:1600px 900px;margin:0}
+:root{--display:'Plus Jakarta Sans','Inter Display','Inter',system-ui,sans-serif;--mono:'JetBrains Mono','DejaVu Sans Mono',ui-monospace,monospace}
+html,body{background:#fff;scroll-behavior:auto}
+body{margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+*{animation:none!important;transition:none!important}
+.page{width:1600px;height:900px;position:relative;overflow:hidden;break-after:page;page-break-after:always;background:var(--cloud);padding:60px 80px 0;display:flex;flex-direction:column}
+.page:last-child{break-after:auto;page-break-after:auto}
+.page.dark{background:var(--ink);color:#fff}
+.pg-head{display:flex;justify-content:space-between;align-items:flex-end;gap:60px;margin-bottom:32px}
+.pg-head h2{font-size:50px;letter-spacing:-.035em;margin:0;max-width:760px}
+.pg-head p{max-width:560px;color:var(--slate);font-size:16.5px;margin:0}
+.pg-foot{position:absolute;left:80px;right:80px;bottom:26px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--slate)}
+.pg-foot span:first-child{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink)}
+.pg-foot svg{width:18px;height:18px}
+.hero{margin:0;border-radius:0;min-height:0;height:900px;padding:80px 100px;grid-template-columns:1.05fr .95fr}
+.hero h1{font-size:68px}
+.page.cover{padding:0}
+.panel{box-shadow:none}
+
+/* logo page */
+.logo-grid .tile{min-height:250px}
+.rules{margin-top:18px}
+
+/* icons page */
+.icon-grid{grid-template-columns:repeat(4,1fr);gap:16px}
+.icard .pv{height:150px}
+.icard .pv img{width:104px;height:104px}
+.icard .inf{padding:12px 16px 14px;gap:5px}
+.icard p{font-size:12.5px}
+.icard b{font-size:16px}
+
+/* colour page */
+#pSw{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+#pSw .sw{grid-column:span 1;cursor:default;transform:none}
+#pSw .sw.wide{grid-column:span 3}
+#pSw .sw .chip-area{height:92px}
+#pSw .sw .meta{padding:10px 14px 12px}
+#pSw .sw .meta b{font-size:15px}
+#pSw .sw .meta span{font-size:12.5px}
+.ratio{margin-top:18px;height:46px}
+
+/* type page */
+.t2{display:grid;grid-template-columns:420px 1fr;gap:20px;flex:1;min-height:0;padding-bottom:70px}
+.t2 .col{display:grid;gap:14px;align-content:start}
+.t2 .panel{padding:20px 22px}
+.t2 .aa{font-size:64px}
+.scale>div{padding:8px 0;grid-template-columns:170px 1fr}
+.scale small{font-size:11px}
+
+/* shape page */
+.shape-row{align-items:end}
+.depth>div{min-height:130px}
+
+/* components page */
+.cgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;flex:1;min-height:0;padding-bottom:64px;align-content:start}
+.cgrid .panel{padding:20px 22px}
+.cgrid .panel h4{margin:0 0 14px;font-size:16px}
+.cgrid .field{min-width:150px}
+.cgrid .ecard{max-width:100%}
+.cgrid .ecard .art{height:130px}
+
+/* screens pages: phone on the left, notes beside it */
+.sc3{display:flex;justify-content:space-between;align-items:center;gap:24px;flex:1;min-height:0;padding-bottom:70px}
+.sc3 .fig{display:flex;align-items:flex-end;justify-items:unset;gap:20px;max-width:none;width:auto}
+.sc3 .phone{zoom:.76}
+.sc3 figcaption{width:158px;max-width:158px;padding-bottom:10px}
+.sc3 figcaption b{font-size:19px;margin-bottom:6px}
+.sc3 figcaption p{font-size:13px;line-height:1.5}
+.sc3 dl{display:grid;grid-template-columns:1fr;gap:0;margin-top:14px;padding-top:12px;font-size:12px}
+.sc3 dt{font-size:11px;margin-top:8px}
+.sc3 dd{font-size:12.5px}
+
+/* fill the page: scale sparse content up so every page reads as a poster */
+.logo-grid,.rules{zoom:1.14}
+#pIcons{zoom:1.2}
+#pSw{zoom:1.12}
+.ratio{zoom:1.12}
+.type-grid{zoom:1.1}
+.t2 .aa{font-size:84px}
+.t2 .panel{padding:24px 26px}
+.shape-wrap{zoom:1.32}
+.cgrid{zoom:1.1}
+.tkp{zoom:1.12;align-items:start;align-content:start}
+
+/* headline spacing tuned for the stand-in display font */
+h1,h2,h3,h4{word-spacing:.06em}
+.pg-head h2,.closing h2{letter-spacing:-.024em}
+.hero h1{letter-spacing:-.028em}
+
+/* tokens page */
+.tkp{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:16px;flex:1;min-height:0;padding-bottom:64px}
+.tkp .panel{padding:20px 22px}
+.tkp h4{font-size:17px;margin:0 0 12px}
+.tr{display:flex;align-items:center;gap:12px;padding:5px 0;font-size:13.5px;border-top:1px solid var(--fog)}
+.tr:first-of-type{border-top:0}
+.tr i{width:26px;height:26px;border-radius:8px;border:1px solid rgba(10,10,10,.1);flex:none}
+.tr b{font-weight:600;min-width:84px}
+.tr span{margin-left:auto;font:600 12px var(--mono);color:var(--slate)}
+.handoff{grid-template-columns:repeat(4,1fr);margin-top:0}
+
+/* closing */
+.closing{display:grid;place-items:center;text-align:center;height:100%;position:relative}
+.closing:before{content:"";position:absolute;inset:0;background:radial-gradient(46% 55% at 100% 0%,rgba(201,182,255,.42),transparent 70%),radial-gradient(50% 60% at 0% 30%,rgba(70,230,242,.36),transparent 70%),radial-gradient(60% 55% at 60% 110%,rgba(54,245,138,.42),transparent 70%),radial-gradient(40% 40% at 100% 100%,rgba(226,255,26,.30),transparent 70%)}
+.closing>div{position:relative}
+.closing svg{width:140px;height:140px;filter:drop-shadow(0 16px 40px rgba(54,245,138,.5))}
+.closing h2{font-size:84px;margin:28px 0 8px;letter-spacing:-.04em}
+.closing p{color:rgba(255,255,255,.7);font-size:19px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="lg0" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse"><stop stop-color="#7FE9F5"/><stop offset=".55" stop-color="#4DF59A"/><stop offset="1" stop-color="#D4FF1F"/></linearGradient>
+    <radialGradient id="lg1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(217.6 25.6) scale(179.2)"><stop stop-color="#C9B6FF"/><stop offset="1" stop-color="#C9B6FF" stop-opacity="0"/></radialGradient>
+    <radialGradient id="lg2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(25.6 115.2) scale(140.8)"><stop stop-color="#46E6F2"/><stop offset="1" stop-color="#46E6F2" stop-opacity="0"/></radialGradient>
+    <radialGradient id="lg3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(115.2 217.6) scale(140.8)"><stop stop-color="#36F58A"/><stop offset="1" stop-color="#36F58A" stop-opacity="0"/></radialGradient>
+    <radialGradient id="lg4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(243.2 243.2) scale(128)"><stop stop-color="#E2FF1A"/><stop offset="1" stop-color="#E2FF1A" stop-opacity="0"/></radialGradient>
+    <symbol id="logo" viewBox="0 0 256 256">
+      <rect width="256" height="256" rx="58" fill="url(#lg0)"/><rect width="256" height="256" rx="58" fill="url(#lg1)"/><rect width="256" height="256" rx="58" fill="url(#lg2)"/><rect width="256" height="256" rx="58" fill="url(#lg3)"/><rect width="256" height="256" rx="58" fill="url(#lg4)"/>
+      <path d="M68.9554 76.7885C104.256 49.6544 149.628 60.4849 164.112 86.6731C174.697 105.821 169.419 134.342 149.997 155.281C162.358 168.523 174.726 181.758 187.088 195H149.007L125.7 167.758L106.364 184.827L117.166 155.938L92.8764 134.927C102.285 134.948 111.7 134.977 121.108 134.999V105.345C127.491 114.435 133.874 123.533 140.256 132.623C140.74 132.06 151.549 119.107 146.603 104.608C142.242 91.8212 127.52 83.424 111.852 86.3338C111.873 99.5398 111.895 112.739 111.917 125.945C104.696 125.858 97.4758 125.771 90.2482 125.685C90.3999 113.388 90.5515 101.085 90.7031 88.7887C87.4756 89.5685 83.6633 90.7526 79.526 92.5794C75.2588 94.4639 71.7136 96.565 68.9121 98.4784C68.9266 91.2436 68.941 84.0088 68.9554 76.7812V76.7885Z" fill="#0A0A0A"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- 1 COVER -->
+<section class="page cover">
+  <div class="hero">
+    <div>
+      <svg class="hero-logo" viewBox="0 0 256 256" role="img" aria-label="Tara logo"><use href="#logo"/></svg>
+      <h1>Find the show.<br>Pick your seat.<br>Walk right in.</h1>
+      <p>Tara brand kit. Colour, type, icons, components and six finished screens.</p>
+    </div>
+    <div class="hero-stage"><div class="pass" id="heroPass" style="transform:rotate(3.5deg)"></div></div>
+  </div>
+</section>
+
+<!-- 2 LOGO -->
+<section class="page">
+  <div class="pg-head"><h2>One glyph. A gradient that glows.</h2><p>The mark is a flame-shaped T cut in ink over four soft light sources. Always use the supplied SVG, never rebuild or recolour the glyph.</p></div>
+  <div class="logo-grid">
+    <div class="tile big"><svg viewBox="0 0 256 256" aria-label="Logo on white"><use href="#logo"/></svg><small>Primary, on light</small></div>
+    <div class="tile dark"><svg viewBox="0 0 256 256" aria-label="Logo on ink"><use href="#logo"/></svg><small>On ink</small></div>
+    <div class="tile grad"><svg viewBox="0 0 256 256" aria-label="Logo on gradient"><use href="#logo"/></svg><small>On the brand gradient</small></div>
+  </div>
+  <div class="rules">
+    <div class="panel rule"><b>Clear space</b><p>Keep half the logo's width free on every side.</p>
+      <div class="clear" style="margin-top:14px"><span class="t">½</span><span class="l">½</span><svg viewBox="0 0 256 256"><use href="#logo"/></svg></div></div>
+    <div class="panel rule"><b>Minimum sizes</b><p>Below 24px, use the app icon only, with no wordmark beside it.</p>
+      <div class="sizes"><figure><svg width="24" height="24" viewBox="0 0 256 256"><use href="#logo"/></svg>24</figure><figure><svg width="40" height="40" viewBox="0 0 256 256"><use href="#logo"/></svg>40</figure><figure><svg width="64" height="64" viewBox="0 0 256 256"><use href="#logo"/></svg>64</figure><figure><svg width="96" height="96" viewBox="0 0 256 256"><use href="#logo"/></svg>96</figure></div></div>
+    <div class="panel rule"><b>App icon shape</b><p>Corner radius is 22.7% of the side: 58 on a 256 canvas, 28 on a 124 canvas. Use the OS mask on iOS and export a full-bleed 1024 square.</p></div>
+  </div>
+  <div class="pg-foot"><span><svg viewBox="0 0 256 256"><use href="#logo"/></svg>Tara brand kit</span><span>Logo</span></div>
+</section>
+
+<!-- 3 ICONS -->
+<section class="page">
+  <div class="pg-head"><h2>The icon family.</h2><p>Eight everyday versions plus three Android adaptive layers. Each one ships as SVG and as PNG at every store size.</p></div>
+  <div class="icon-grid" id="pIcons"></div>
+  <div class="pg-foot"><span><svg viewBox="0 0 256 256"><use href="#logo"/></svg>Tara brand kit</span><span>Icons</span></div>
+</section>
+
+<!-- 4 COLOUR -->
+<section class="page">
+  <div class="pg-head"><h2>Neutral stage, one light source.</h2><p>Seventy percent neutrals, twenty-five percent brand triad, five percent lilac. No single brand colour owns a screen.</p></div>
+  <div id="pSw"></div>
+  <div class="ratio" role="img" aria-label="Colour balance">
+    <div style="width:70%;background:linear-gradient(90deg,#0A0A0A 0 35%,#F4F8F7 35%);color:#fff;justify-content:flex-start;padding-left:24px">70% neutral</div>
+    <div style="width:25%;background:var(--grad)">25% brand triad</div>
+    <div style="width:5%;background:var(--lilac)"></div>
+  </div>
+  <div class="pg-foot"><span><svg viewBox="0 0 256 256"><use href="#logo"/></svg>Tara brand kit</span><span>Colour</span></div>
+</section>
+
+<!-- 5 CONTRAST + GLOW -->
+<section class="page">
+  <div class="pg-head"><h2>Text on colour is always ink.</h2><p>The brand colours are bright. White text on them fails, and ink on them clears AAA. Light comes from stacked soft glows, never from heavy shadows.</p></div>
+  <div class="type-grid" style="gap:20px">
+    <div class="panel"><table class="ct" id="ctable"><thead><tr><th>Pair</th><th>Ratio</th><th>Result</th></tr></thead><tbody></tbody></table></div>
+    <div style="display:grid;gap:20px;align-content:start">
+      <div class="glow-demo" style="height:230px"><i></i><b>Stage light</b></div>
+      <div class="panel"><b style="font:800 18px var(--display);letter-spacing:-.02em">Glow recipe</b>
+        <p style="color:var(--slate);font-size:14.5px;margin-top:6px">Stack soft radial lights from the edges over ink: lilac top right, aqua left, mint bottom, lime corner. Keep opacity under 0.45 behind text. On light screens, use aqua and lilac only.</p></div>
+    </div>
+  </div>
+  <div class="pg-foot"><span><svg viewBox="0 0 256 256"><use href="#logo"/></svg>Tara brand kit</span><span>Colour</span></div>
+</section>
+
+<!-- 6 TYPE -->
+<section class="page">
+  <div class="pg-head"><h2>Athletic headlines. Quiet body.</h2><p>Plus Jakarta Sans for anything you shout, Inter for anything you read, JetBrains Mono for anything a scanner or a box-office clerk reads.</p></div>
+  <div class="t2">
+    <div class="col">
+      <div class="panel"><div class="aa" style="font-family:var(--display);font-weight:800">Aa</div><b style="font:800 19px var(--display)">Plus Jakarta Sans</b><p style="color:var(--slate);font-size:13.5px">Display and headlines. Weights 700 and 800, tracking −0.02 to −0.04em.</p></div>
+      <div class="panel"><div class="aa" style="font-family:var(--body);font-weight:500;letter-spacing:-.05em">Aa</div><b style="font:800 19px var(--display)">Inter</b><p style="color:var(--slate);font-size:13.5px">Body, forms, prices, schedules. Weights 400 to 600.</p></div>
+      <div class="panel"><div class="aa" style="font-family:var(--mono);font-weight:700;letter-spacing:-.06em">Aa</div><b style="font:800 19px var(--display)">JetBrains Mono</b><p style="color:var(--slate);font-size:13.5px">Ticket codes and order numbers only. Weight 700, tracking +0.08em.</p></div>
+    </div>
+    <div class="panel"><div class="scale">
+      <div><small>display<br>56 / 60 · 800</small><span style="font:800 56px/60px var(--display);letter-spacing:-.03em">Neon Skyline</span></div>
+      <div><small>headline-lg<br>40 / 46 · 800</small><span style="font:800 40px/46px var(--display);letter-spacing:-.02em">Doors open at 18:30</span></div>
+      <div><small>headline-md<br>28 / 34 · 700</small><span style="font:700 28px/34px var(--display);letter-spacing:-.015em">Choose your seats</span></div>
+      <div><small>headline-sm<br>20 / 28 · 700</small><span style="font:700 20px/28px var(--display);letter-spacing:-.01em">Add something to your night</span></div>
+      <div><small>body-lg<br>18 / 28 · 400</small><span style="font:400 18px/28px var(--body)">Your tickets work offline at the gate.</span></div>
+      <div><small>body-md<br>16 / 26 · 400</small><span style="font:400 16px/26px var(--body)">Seats are held for ten minutes while you check out.</span></div>
+      <div><small>body-sm<br>14 / 22 · 500</small><span style="font:500 14px/22px var(--body)">Gate C, Block 112, Row F</span></div>
+      <div><small>caption<br>12 / 16 · 500</small><span style="font:500 12px/16px var(--body);color:var(--slate)">Includes £6.50 service fee</span></div>
+      <div><small>label-code<br>13 / 18 · 600</small><span style="font:600 13px/18px var(--mono);letter-spacing:.04em">ORDER TRA-4471-A9</span></div>
+      <div><small>ticket-id<br>11 / 14 · 700</small><span style="font:700 11px/14px var(--mono);letter-spacing:.08em">TRA-9X4K-77Q2</span></div>
+    </div></div>
+  </div>
+  <div class="pg-foot"><span><svg viewBox="0 0 256 256"><use href="#logo"/></svg>Tara brand kit</span><span>Type</span></div>
+</section>
+
+<!-- 7 SHAPE + DEPTH -->
+<section class="page">
+  <div class="pg-head"><h2>Squircles and floodlights.</h2><p>Corner radii echo the app icon. Depth comes from light: a hairline, a soft lift, and colour-tinted glow for what matters.</p></div>
+  <div class="shape-wrap">
+  <div class="panel" style="margin-bottom:20px">
+    <div class="shape-row">
+      <div class="shape"><i style="width:96px;height:56px;border-radius:10px"></i><b>10 · small</b><span style="font-size:13.5px;color:var(--slate)">Inputs, badges, micro-chips</span></div>
+      <div class="shape"><i style="width:120px;height:80px;border-radius:16px"></i><b>16 · medium</b><span style="font-size:13.5px;color:var(--slate)">Buttons, event cards, tiers</span></div>
+      <div class="shape"><i style="width:140px;height:110px;border-radius:28px"></i><b>28 · large</b><span style="font-size:13.5px;color:var(--slate)">Hero cards, sheets, ticket pass</span></div>
+      <div class="shape"><i style="width:120px;height:44px;border-radius:99px"></i><b>Full · pill</b><span style="font-size:13.5px;color:var(--slate)">Status badges, filters, tab bar</span></div>
+    </div>
+  </div>
+  <div class="depth">
+    <div style="box-shadow:0 1px 2px rgba(10,10,10,.05)"><b>Level 1</b><span>Cards. White, 1px fog, micro shadow.</span></div>
+    <div style="box-shadow:0 12px 32px rgba(10,10,10,.08)"><b>Level 2</b><span>Floating bars and flyouts.</span></div>
+    <div style="box-shadow:0 8px 24px rgba(54,245,138,.35);border-color:transparent"><b>Brand glow</b><span>Primary CTA and live ticket. Mint or lime tint.</span></div>
+    <div style="box-shadow:0 20px 48px rgba(10,10,10,.14);border-color:rgba(10,10,10,.1)"><b>Level 3</b><span>Modals and overlays, with an ink 10% border.</span></div>
+  </div>
+  </div>
+  <div class="pg-foot"><span><svg viewBox="0 0 256 256"><use href="#logo"/></svg>Tara brand kit</span><span>Shape and depth</span></div>
+</section>
+
+<!-- 8 COMPONENTS -->
+<section class="page">
+  <div class="pg-head"><h2>Built from a short list of parts.</h2><p>Every control is at least 44px tall and shows focus with a 2px aqua ring.</p></div>
+  <div class="cgrid">
+    <div style="display:grid;gap:16px;align-content:start">
+      <div class="panel"><h4>Buttons</h4>
+        <div class="row" style="margin-bottom:12px"><button class="btn p">Buy tickets</button><button class="btn s">Add to wallet</button></div>
+        <div class="row"><button class="btn o">View seat map</button><button class="btn g">Details</button><button class="btn p" disabled>Sold out</button></div></div>
+      <div class="panel"><h4>Badges</h4>
+        <div class="row"><span class="chip aqua">Doors open</span><span class="chip mint">Available</span><span class="chip lime">Low stock</span><span class="chip lilac">Electronic</span></div></div>
+      <div class="panel"><h4>Inputs</h4>
+        <div class="row" style="align-items:start;flex-wrap:nowrap">
+          <label class="field">Promo code<input class="f" value="TARA10"></label>
+          <label class="field">Email<input class="e" value="alex@"><small>Add the part after the @.</small></label>
+        </div></div>
+    </div>
+    <div style="display:grid;gap:16px;align-content:start">
+      <div class="panel"><h4>Selection</h4>
+        <div class="row" style="gap:20px">
+          <label class="check"><input type="checkbox" checked>Ticket protection</label>
+          <label class="check"><input type="radio" name="r" checked>General</label>
+          <label class="check"><input type="radio" name="r">VIP</label>
+          <input class="switch" type="checkbox" checked aria-label="Notifications">
+        </div></div>
+      <div class="panel"><h4>Tab bar and top bar</h4>
+        <div style="background:var(--ink);border-radius:var(--r-l);padding:22px 16px;display:grid;gap:20px">
+          <div class="tabbar" style="position:static;margin:0;display:flex" id="tabdemo"></div>
+          <div class="topbar" style="color:#fff"><svg class="logo" style="width:38px;height:38px" viewBox="0 0 256 256"><use href="#logo"/></svg><span class="mid">Tonight</span><span class="circle-btn" id="bellDemo"></span></div>
+        </div></div>
+    </div>
+    <div class="panel"><h4>Event card</h4>
+      <div class="ecard"><div class="strip"></div><svg class="art" data-art="neon" preserveAspectRatio="xMidYMid slice"></svg>
+        <div class="body"><span class="chip lime" style="width:max-content">Few left</span><h5>Neon Skyline Festival</h5><p>Fri 12 Dec at 20:00, Wembley Arena</p>
+        <div class="foot"><b>From £68</b><button class="btn s" style="padding:10px 16px;min-height:40px;font-size:14px">Get tickets</button></div></div></div></div>
+  </div>
+  <div class="pg-foot"><span><svg viewBox="0 0 256 256"><use href="#logo"/></svg>Tara brand kit</span><span>Components</span></div>
+</section>
+
+<!-- 9 SCREENS A -->
+<section class="page">
+  <div class="pg-head" style="margin-bottom:18px"><h2>From discovery to the seat.</h2><p>Each screen respects the Dynamic Island (59px top inset) and the home indicator (34px bottom inset).</p></div>
+  <div class="sc3" id="pScA"></div>
+  <div class="pg-foot"><span><svg viewBox="0 0 256 256"><use href="#logo"/></svg>Tara brand kit</span><span>Screens</span></div>
+</section>
+
+<!-- 10 SCREENS B -->
+<section class="page">
+  <div class="pg-head" style="margin-bottom:18px"><h2>From checkout to the gate.</h2><p>Light mode for money, ink for the ticket. The same tokens carry through every screen.</p></div>
+  <div class="sc3" id="pScB"></div>
+  <div class="pg-foot"><span><svg viewBox="0 0 256 256"><use href="#logo"/></svg>Tara brand kit</span><span>Screens</span></div>
+</section>
+
+<!-- 11 TOKENS -->
+<section class="page">
+  <div class="pg-head"><h2>Tokens at a glance.</h2><p>The full set ships as CSS variables and JSON in the web version of this kit.</p></div>
+  <div class="tkp">
+    <div class="panel"><h4>Colour</h4><div id="pTkC"></div></div>
+    <div class="panel"><h4>Shape and space</h4><div id="pTkS"></div><h4 style="margin-top:18px">Type</h4><div id="pTkT"></div></div>
+    <div class="panel"><h4>Elevation</h4><div id="pTkE"></div><h4 style="margin-top:18px">Safe areas</h4><div id="pTkA"></div></div>
+  </div>
+  <div class="handoff" style="position:absolute;left:80px;right:80px;bottom:60px;display:none"></div>
+  <div class="pg-foot"><span><svg viewBox="0 0 256 256"><use href="#logo"/></svg>Tara brand kit</span><span>Tokens</span></div>
+</section>
+
+<!-- 12 CLOSING -->
+<section class="page dark" style="padding:0">
+  <div class="closing"><div>
+    <svg viewBox="0 0 256 256"><use href="#logo"/></svg>
+    <h2>Tara</h2>
+    <p>@thant4thelaugh</p>
+    <p style="margin-top:6px;font-size:14px">Plus Jakarta Sans · Inter · JetBrains Mono</p>
+  </div></div>
+</section>
+
+<script>
+/* ---------- icons ---------- */
+const IC={
+ compass:'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 13.6 13.6 8.5 15.5 10.4 10.4z"/>',
+ ticket:'<path d="M4 8a2 2 0 0 0 0 4v0a2 2 0 0 1 0 4v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2a2 2 0 0 1 0-4v0a2 2 0 0 0 0-4V6a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1z" transform="translate(0 -1)"/><path d="M14 6v2m0 3v2m0 3v2" transform="translate(0 -1)"/>',
+ bag:'<path d="M5 8h14l-1 12H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>',
+ user:'<circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c.8-3.6 3.6-5.4 7-5.4s6.2 1.8 7 5.4"/>',
+ bell:'<path d="M6 16V11a6 6 0 0 1 12 0v5l1.6 2H4.4z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/>',
+ search:'<circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/>',
+ back:'<path d="M14.5 5.5 8 12l6.5 6.5"/>',
+ heart:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+ plus:'<path d="M12 5v14M5 12h14"/>',
+ check:'<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+ clock:'<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+ share:'<path d="M12 15V4M8 8l4-4 4 4"/><path d="M5 12v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/>'
+};
+const ic=(n,s=22,w=1.9)=>`<svg class="ic" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[n]}</svg>`;
+
+/* ---------- poster art ---------- */
+let uid=0;
+function rng(s){return()=>{s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function art(kind){
+  const id='a'+(++uid);
+  if(kind==='neon'){
+    const r=rng(7);let sky='';let x=0;
+    while(x<320){const w=10+r()*20|0,h=34+r()*74|0;sky+=`<rect x="${x}" y="${200-h}" width="${w}" height="${h}" fill="#0A0A0A"/>`;
+      if(r()>.5)sky+=`<rect x="${x+3}" y="${200-h+6}" width="3" height="3" fill="#D4FF1F"/>`;x+=w+(r()*3|0);}
+    return `<defs><linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FE9F5"/><stop offset=".55" stop-color="#4DF59A"/><stop offset="1" stop-color="#D4FF1F"/></linearGradient><linearGradient id="${id}b" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+    <rect width="320" height="200" fill="url(#${id}g)"/><circle cx="236" cy="92" r="22" fill="#C9B6FF"/>
+    <g fill="url(#${id}b)" opacity=".75"><path d="M60 150 L10 0 H70z"/><path d="M130 150 L110 0 H180z"/><path d="M200 150 L250 0 H310z"/><path d="M265 150 L170 0 H215z" opacity=".6"/></g>${sky}`;
+  }
+  if(kind==='beams'){
+    return `<defs><linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FE9F5"/><stop offset=".55" stop-color="#4DF59A"/><stop offset="1" stop-color="#D4FF1F"/></linearGradient><linearGradient id="${id}b" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+    <rect width="320" height="200" fill="url(#${id}g)"/><g fill="url(#${id}b)"><path d="M40 200 L-10 0 H60z"/><path d="M120 200 L90 0 H160z"/><path d="M210 200 L250 0 H320z"/></g><circle cx="244" cy="74" r="20" fill="#C9B6FF" opacity=".9"/>`;
+  }
+  if(kind==='pulse'){
+    let rings='';for(let i=1;i<=9;i++)rings+=`<circle cx="190" cy="105" r="${i*17}" fill="none" stroke="#0A0A0A" stroke-width="${i%3===0?2.4:1.1}" opacity="${1-i*.07}"/>`;
+    return `<defs><linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9B6FF"/><stop offset="1" stop-color="#46E6F2"/></linearGradient></defs><rect width="320" height="200" fill="url(#${id}g)"/>${rings}<circle cx="190" cy="105" r="11" fill="#D4FF1F"/>`;
+  }
+  const r=rng(21);let sq='';const cols=['#36F58A','#46E6F2','#D4FF1F','#C9B6FF','#1A1D1F','#1A1D1F','#1A1D1F'];
+  for(let y=0;y<10;y++)for(let x=0;x<16;x++){const c=cols[r()*cols.length|0];sq+=`<rect x="${x*20+1}" y="${y*20+1}" width="18" height="18" rx="4" fill="${c}"/>`}
+  return `<rect width="320" height="200" fill="#0A0A0A"/>${sq}<path d="M120 60h80v80h-80z" fill="#0A0A0A"/><path d="M140 80l40 20-40 20z" fill="#36F58A"/>`;
+}
+document.querySelectorAll('svg[data-art]').forEach(s=>{s.setAttribute('viewBox','0 0 320 200');s.setAttribute('preserveAspectRatio','xMidYMid slice');s.innerHTML=art(s.dataset.art)});
+
+/* ---------- QR ---------- */
+function qr(){
+  const n=25,r=rng(4471),g=Array.from({length:n},()=>Array(n).fill(0));
+  const finder=(ox,oy)=>{for(let y=0;y<7;y++)for(let x=0;x<7;x++){const e=x==0||y==0||x==6||y==6,c=x>=2&&x<=4&&y>=2&&y<=4;g[oy+y][ox+x]=(e||c)?1:0}};
+  for(let y=0;y<n;y++)for(let x=0;x<n;x++)g[y][x]=r()>.52?1:0;
+  const clear=(ox,oy)=>{for(let y=-1;y<8;y++)for(let x=-1;x<8;x++){const yy=oy+y,xx=ox+x;if(yy>=0&&xx>=0&&yy<n&&xx<n)g[yy][xx]=0}};
+  clear(0,0);clear(n-7,0);clear(0,n-7);finder(0,0);finder(n-7,0);finder(0,n-7);
+  let out='';for(let y=0;y<n;y++)for(let x=0;x<n;x++)if(g[y][x])out+=`<rect x="${x}" y="${y}" width="1.02" height="1.02" rx=".18"/>`;
+  return `<svg viewBox="0 0 ${n} ${n}" fill="#0A0A0A" shape-rendering="crispEdges" role="img" aria-label="Entry QR code">${out}</svg>`;
+}
+
+/* ---------- ticket pass ---------- */
+function pass(withWallets){
+  return `<div class="in">
+    <div class="top"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice">${art('beams')}</svg>
+      <div class="txt"><div class="tp"><span class="chip">General admission</span><svg width="34" height="34" viewBox="0 0 256 256"><use href="#logo"/></svg></div>
+      <div><h4>Neon Skyline<br>Festival</h4><div class="when"><span>Fri 12 Dec<small>Date</small></span><span>20:00<small>Doors 18:30</small></span><span>Wembley<small>Arena</small></span></div></div></div></div>
+    <div class="dash"></div>
+    <div class="bot"><div class="qrwrap"><div class="qrglow"></div><div class="qrbox">${qr()}</div></div>
+      <div class="seatgrid"><div><small>Gate</small><b>C</b></div><div><small>Block</small><b>112</b></div><div><small>Row</small><b>F</b></div><div><small>Seat</small><b>24</b></div></div>
+      <span class="code">TRA-9X4K-77Q2</span></div></div>`;
+}
+document.getElementById('heroPass').innerHTML=pass();
+
+/* ---------- small demos ---------- */
+document.getElementById('tabdemo').innerHTML=[['compass',1],['ticket'],['bag'],['user']].map(([n,on])=>`<span class="${on?'on':''}" style="${on?'':'color:rgba(255,255,255,.7)'}">${ic(n)}</span>`).join('');
+document.getElementById('tabdemo').style.background='rgba(36,40,42,.72)';document.getElementById('tabdemo').style.border='1px solid rgba(255,255,255,.12)';
+document.getElementById('bellDemo').innerHTML=ic('bell')+'<i class="dot"></i>';
+
+/* ---------- seat map ---------- */
+function seatMap(){
+  const cx=160,cy=52,rings=[[54,86],[92,124],[130,162]];
+  const pol=(r,a)=>[cx+r*Math.cos(a),cy+r*Math.sin(a)];
+  const status={'0-0':'a','0-1':'a','0-2':'l','0-3':'a','0-4':'s','1-0':'a','1-1':'l','1-2':'sel','1-3':'a','1-4':'a','2-0':'a','2-1':'a','2-2':'a','2-3':'l','2-4':'s'};
+  let out=`<rect x="70" y="0" width="180" height="40" rx="14" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.22)"/><text x="160" y="25" text-anchor="middle" fill="#fff" font-family="Plus Jakarta Sans" font-weight="800" font-size="14" letter-spacing="1">STAGE</text>`;
+  const defs=`<defs><linearGradient id="selg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FE9F5"/><stop offset=".55" stop-color="#4DF59A"/><stop offset="1" stop-color="#D4FF1F"/></linearGradient></defs>`;
+  rings.forEach((rg,ri)=>{
+    const [r0,r1]=rg,n=5,a0=Math.PI*.1,a1=Math.PI*.9,gap=.045;
+    for(let i=0;i<n;i++){
+      const s=a0+(a1-a0)*i/n+gap/2,e=a0+(a1-a0)*(i+1)/n-gap/2;
+      const [x1,y1]=pol(r1,s),[x2,y2]=pol(r1,e),[x3,y3]=pol(r0,e),[x4,y4]=pol(r0,s);
+      const st=status[ri+'-'+i];
+      const fill=st==='a'?'#36F58A':st==='l'?'#D4FF1F':st==='sel'?'url(#selg)':'rgba(255,255,255,.1)';
+      const extra=st==='sel'?'stroke="#fff" stroke-width="2.5"':'';
+      out+=`<path d="M${x1} ${y1} A${r1} ${r1} 0 0 1 ${x2} ${y2} L${x3} ${y3} A${r0} ${r0} 0 0 0 ${x4} ${y4}z" fill="${fill}" ${extra} opacity="${st==='s'?1:st==='sel'?1:.88}"/>`;
+    }
+  });
+  const [lx,ly]=pol(191,Math.PI*(.1+.8*2.5/5)*1);
+  out+=`<g transform="translate(${lx} ${ly})"><circle r="16" fill="#0A0A0A" opacity=".0"/></g>`;
+  return `<svg viewBox="0 0 320 222" aria-label="Venue seat map">${defs}${out}</svg>`;
+}
+
+/* ---------- screens ---------- */
+const sbar=(c='#fff')=>`<div class="status" style="color:${c}"><span>9:41</span><span class="r"><svg viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12" fill="none" stroke="currentColor"><rect x=".5" y=".5" width="22" height="11" rx="3.5" opacity=".5"/><rect x="2" y="2" width="17" height="8" rx="2" fill="currentColor" stroke="none"/><path d="M24 4v4" stroke-linecap="round" opacity=".6"/></svg></span></div><div class="island"></div>`;
+const tab=(on)=>`<nav class="tabbar" aria-label="Main">${['compass','ticket','bag','user'].map((n,i)=>`<span class="${i===on?'on':''}">${ic(n,24)}</span>`).join('')}</nav>`;
+const thumb=k=>`<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice">${art(k)}</svg>`;
+
+const S=[];
+
+S.push({t:'Discover',d:'Tonight comes first. One lime-glow feature card, then a quiet list.',spec:[['Feature card','28 radius, lime glow'],['Filter pills','Full round, mint when on'],['Tab bar','66px, floats 26px up']],
+html:`<div class="scr dark"><div class="ambient"></div>${sbar()}
+<div class="body-s">
+  <div class="topbar"><svg class="logo" viewBox="0 0 256 256"><use href="#logo"/></svg><span class="circle-btn">${ic('bell')}<i class="dot"></i></span></div>
+  <h2 class="h-big">Tonight in<br>London</h2><p class="sub-s">Twelve shows near you, picked for you.</p>
+  <div class="search">${ic('search',20)}Artists, venues, games</div>
+  <div class="pills"><span class="pill on">For you</span><span class="pill">Music</span><span class="pill">Festivals</span><span class="pill">Gaming</span><span class="pill">Comedy</span></div>
+  <div class="feature"><svg class="art" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice">${art('neon')}</svg><span class="tagp">Few left</span><span class="price">From £68</span>
+    <div class="over"><h4>Neon Skyline Festival</h4><div class="meta">Fri 12 Dec at 20:00, Wembley Arena</div></div></div>
+  <div class="sect">Near you<small>See all</small></div>
+  <div class="row-ev"><div class="th">${thumb('pulse')}</div><div><b>Pulse Sessions</b><span class="s">Sat 13 Dec, Camden</span></div><span class="chip mint">Open</span></div>
+</div>${tab(0)}<div class="home-ind"></div></div>`});
+
+S.push({t:'Event detail',d:'Poster fades into the stage. Pick a tier, add merch, move on.',spec:[['Hero art','370px, fades to ink'],['Selected tier','1.5px gradient border'],['CTA bar','Gradient fade, 34px inset']],
+html:`<div class="scr dark"><div class="hero-art">${thumb('neon')}</div><div class="ambient" style="opacity:.6"></div>${sbar()}
+<div class="body-s" style="padding-top:66px">
+  <div class="detail-top"><span class="circle-btn">${ic('back')}</span><span class="row" style="gap:8px;flex-wrap:nowrap"><span class="circle-btn">${ic('share',20)}</span><span class="circle-btn">${ic('heart',20)}</span></span></div>
+  <div class="detail-title"><span class="chip lime" style="margin-bottom:10px">Few left</span><h2 class="h-big" style="margin:0 0 6px;font-size:36px">Neon Skyline<br>Festival</h2><p class="sub-s" style="color:rgba(255,255,255,.8)">Fri 12 Dec at 20:00, Wembley Arena</p></div>
+  <div class="facts"><div><small>Doors</small><b>18:30</b></div><div><small>Age</small><b>16+</b></div><div><small>Length</small><b>5 hours</b></div></div>
+  <div class="tier sel" style="margin-top:14px"><span class="rd"></span><div><b>General</b><small>Standing, level 1</small></div><div class="p">£68<span class="chip mint">Available</span></div></div>
+  <div class="tier"><span class="rd"></span><div><b>Floor</b><small>Front of stage</small></div><div class="p">£96<span class="chip lime">Low stock</span></div></div>
+</div>
+<div class="cta-bar"><div class="pr"><small>2 tickets</small><b>£136</b></div><button class="btn p">Choose seats</button></div><div class="home-ind"></div></div>`});
+
+S.push({t:'Seat plan',d:'Availability reads at a glance. The chosen block is the only one that glows.',spec:[['Seat colours','Mint, lime, ink 10%'],['Selected block','Brand gradient, white stroke'],['Hold timer','Aqua pill']],
+html:`<div class="scr dark"><div class="ambient"></div>${sbar()}
+<div class="body-s">
+  <div class="topbar"><span class="circle-btn">${ic('back')}</span><span class="mid">Choose seats</span><span style="width:42px"></span></div>
+  <p class="sub-s" style="margin-top:14px;text-align:center">Neon Skyline Festival, Fri 12 Dec</p>
+  <div class="legend"><span><i style="background:var(--mint)"></i>Available</span><span><i style="background:var(--lime)"></i>Few left</span><span><i style="background:rgba(255,255,255,.2)"></i>Taken</span></div>
+  <div class="map" style="margin-top:20px">${seatMap()}</div>
+</div>
+<div class="sheet"><div class="grab"></div>
+  <div class="l1"><div><h5>Block 112, Row F</h5><p>Level 1, near the stage</p></div><span class="timer">${ic('clock',15,2.2)}08:42</span></div>
+  <div class="seatpair"><span>Seat <b>24</b></span><span>Seat <b>25</b></span><span style="flex:1.3">Total <b>£136</b></span></div>
+  <button class="btn p">Continue to checkout</button></div><div class="home-ind"></div></div>`});
+
+S.push({t:'Checkout',d:'Light mode for money. Lines are plain, the discount is obvious, the total is the biggest thing.',spec:[['Order card','76px thumb, 28 radius'],['Voucher','Mint badge, ink text'],['Selected method','2px ink ring']],
+html:`<div class="scr light"><div class="ambient"></div>${sbar('#0A0A0A')}
+<div class="body-s">
+  <div class="topbar"><span class="circle-btn">${ic('back')}</span><span class="mid">Checkout</span><span style="width:42px"></span></div>
+  <div class="ordercard"><div class="th">${thumb('neon')}</div><div><b>Neon Skyline Festival</b><span>2 × General, Block 112</span><span>Fri 12 Dec at 20:00</span></div></div>
+  <div class="lines"><div><span>2 tickets</span><span>£136.00</span></div><div><span>Tour tee, size M</span><span>£28.00</span></div><div><span>Service fee</span><span>£6.50</span></div><div class="disc"><span>Voucher<em>TARA10</em></span><span>−£17.05</span></div><div class="tot"><span>Total</span><span>£153.45</span></div></div>
+  <div class="pay"><div class="m sel"><span class="lg">Pay</span><div>Apple Pay<small>Confirm with Face ID</small></div><span class="rd"></span></div><div class="m"><span class="lg g2">G Pay</span><div>Google Pay</div><span class="rd"></span></div><div class="m"><span class="lg cd">•••</span><div>Card ending 4242</div><span class="rd"></span></div></div>
+</div>
+<div class="cta-bar"><button class="btn p" style="font-size:17px">Pay £153.45</button></div><div class="home-ind"></div></div>`});
+
+S.push({t:'Ticket',d:'The signature moment. A live glow drifts behind the code so staff can see it is current.',spec:[['Cut-outs','11px radius, true mask'],['Glow','Blur 18px, 7s drift'],['Code','JetBrains Mono, +0.08em']],
+html:`<div class="scr dark"><div class="ambient"></div>${sbar()}
+<div class="body-s" style="align-items:center">
+  <div class="topbar" style="width:100%"><span class="circle-btn">${ic('back')}</span><span class="chip mint">Ready to scan</span><span class="circle-btn">${ic('share',20)}</span></div>
+  <div style="margin-top:18px;width:100%;display:grid;justify-items:center"><div class="pass" style="--cut:200px;max-width:326px;transform:scale(.94);transform-origin:top center;margin-bottom:-24px">${pass()}</div></div>
+  <div class="wallets" style="margin-top:10px"><button class="btn w">Apple Wallet</button><button class="btn line">Google Wallet</button></div>
+</div><div class="home-ind"></div></div>`});
+
+S.push({t:'Merch',d:'Pre-order from the event page. Size picker and quantity stay on the card, no extra screen.',spec:[['Product card','16 radius, 1px fog'],['Add button','32px, mint when added'],['Drop banner','Gradient with mint glow']],
+html:`<div class="scr light"><div class="ambient"></div>${sbar('#0A0A0A')}
+<div class="body-s">
+  <div class="topbar"><span class="circle-btn">${ic('back')}</span><span class="mid">Merch</span><span class="cart">${ic('bag',18,2)}Bag<i>2</i></span></div>
+  <div class="drop"><h4>Neon Skyline tour drop</h4><p>Pick up at the venue, no queue.</p>
+    <svg viewBox="0 0 120 120"><path d="M30 22l18-8c4 8 20 8 24 0l18 8 16 22-18 10v52H32V54L14 44z" fill="#0A0A0A"/><path d="M58 40h4v38h-4z" fill="#36F58A" opacity=".9"/></svg></div>
+  <div class="pgrid">
+    <div class="prod"><div class="im" style="background:rgba(127,233,245,.35)"><svg viewBox="0 0 120 120"><path d="M30 22l18-8c4 8 20 8 24 0l18 8 16 22-18 10v52H32V54L14 44z" fill="#0A0A0A"/><circle cx="60" cy="68" r="14" fill="#D4FF1F"/></svg></div><b>Tour tee</b><div class="sizes-s"><span>S</span><span class="on">M</span><span>L</span></div><div class="pr"><span>£28</span><span class="add on">${ic('check',16,2.6)}</span></div></div>
+    <div class="prod"><div class="im" style="background:rgba(212,255,31,.35)"><svg viewBox="0 0 120 120"><path d="M22 70c0-26 16-42 38-42s38 16 38 42z" fill="#0A0A0A"/><path d="M18 70h60c20 0 28 6 28 12H18z" fill="#36F58A"/><circle cx="60" cy="50" r="6" fill="#46E6F2"/></svg></div><b>Dad hat</b><div class="sizes-s"><span class="on">One size</span></div><div class="pr"><span>£22</span><span class="add">${ic('plus',16,2.6)}</span></div></div>
+    <div class="prod"><div class="im" style="background:rgba(201,182,255,.45)"><svg viewBox="0 0 120 120"><path d="M30 40h60l6 70H24z" fill="#0A0A0A"/><path d="M44 40v-8a16 16 0 0 1 32 0v8" fill="none" stroke="#0A0A0A" stroke-width="6"/><rect x="46" y="62" width="28" height="28" rx="8" fill="#46E6F2"/></svg></div><b>Canvas tote</b><div class="pr"><span>£18</span><span class="add">${ic('plus',16,2.6)}</span></div></div>
+    <div class="prod"><div class="im" style="background:rgba(54,245,138,.28)"><svg viewBox="0 0 120 120"><rect x="26" y="14" width="68" height="92" rx="6" fill="#0A0A0A"/><rect x="34" y="22" width="52" height="46" rx="4" fill="url(#lg0)"/><rect x="34" y="76" width="30" height="5" rx="2.5" fill="#fff"/><rect x="34" y="86" width="20" height="5" rx="2.5" fill="#fff" opacity=".5"/></svg></div><b>Gig poster</b><div class="pr"><span>£12</span><span class="add">${ic('plus',16,2.6)}</span></div></div>
+  </div>
+</div>${tab(2)}<div class="home-ind"></div></div>`});
+
+
+/* ---------- app icons: build, preview, download ---------- */
+const GLYPH=document.querySelector('#logo path').getAttribute('d');
+const STOPS='<stop stop-color="#7FE9F5"/><stop offset=".55" stop-color="#4DF59A"/><stop offset="1" stop-color="#D4FF1F"/>';
+function iconSVG(o,px){
+  const k='i'+Math.random().toString(36).slice(2,7), vb=o.vb||'0 0 256 256';
+  const rx=o.r?` rx="${o.r}"`:'', R=`width="256" height="256"${rx}`;
+  let defs='',bg='';
+  const glows=`<radialGradient id="${k}1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(217.6 25.6) scale(179.2)"><stop stop-color="#C9B6FF"/><stop offset="1" stop-color="#C9B6FF" stop-opacity="0"/></radialGradient><radialGradient id="${k}2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(25.6 115.2) scale(140.8)"><stop stop-color="#46E6F2"/><stop offset="1" stop-color="#46E6F2" stop-opacity="0"/></radialGradient><radialGradient id="${k}3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(115.2 217.6) scale(140.8)"><stop stop-color="#36F58A"/><stop offset="1" stop-color="#36F58A" stop-opacity="0"/></radialGradient><radialGradient id="${k}4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(243.2 243.2) scale(128)"><stop stop-color="#E2FF1A"/><stop offset="1" stop-color="#E2FF1A" stop-opacity="0"/></radialGradient>`;
+  const lin=`<linearGradient id="${k}0" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">${STOPS}</linearGradient>`;
+  if(o.tile==='grad'||o.tile==='gradbg'){
+    defs+=lin+glows;
+    const layers=[0,1,2,3,4].map(i=>`<rect ${R} fill="url(#${k}${i})"/>`).join('');
+    bg=o.tile==='gradbg'?`<g transform="scale(1.6875)">${layers}</g>`:layers;
+  }else if(o.tile==='ink'){
+    defs+=glows;
+    bg=`<rect ${R} fill="#0A0A0A"/><rect ${R} fill="url(#${k}1)" opacity=".5"/><rect ${R} fill="url(#${k}2)" opacity=".3"/><rect ${R} fill="url(#${k}3)" opacity=".55"/>`;
+  }else if(o.tile==='light'){
+    bg=`<rect ${R} fill="#FFFFFF"/>`+(o.r?`<rect x="1" y="1" width="254" height="254" rx="${o.r-1}" fill="none" stroke="#0A0A0A" stroke-opacity=".1" stroke-width="2"/>`:'');
+  }
+  let fill={ink:'#0A0A0A',black:'#000000',white:'#FFFFFF'}[o.glyph];
+  if(o.glyph==='grad'){defs+=`<linearGradient id="${k}g" x1="68" y1="60" x2="188" y2="195" gradientUnits="userSpaceOnUse">${STOPS}</linearGradient>`;fill=`url(#${k}g)`}
+  const gt=o.gt?` transform="${o.gt}"`:'';
+  const sz=px?` width="${px}" height="${px}"`:'';
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}"${sz} fill="none"><defs>${defs}</defs>${bg}<path${gt} d="${GLYPH}" fill="${fill}"/></svg>`;
+}
+const AND='translate(216 216) scale(1.45) translate(-128 -127.7)';
+const TILE_SIZES=[1024,512,256,180,128,64,32], GLYPH_SIZES=[1024,512,256,128,64,32];
+const VARIANTS=[
+ {id:'primary',file:'tara-icon-primary',t:'Primary',d:'Gradient tile, ink glyph. The icon for stores, the web and marketing.',o:{tile:'grad',glyph:'ink',r:58},bg:'lt',sizes:TILE_SIZES},
+ {id:'ios',file:'tara-icon-ios-1024',t:'iOS full-bleed',d:'Square with no rounded corners. iOS applies the shape itself.',o:{tile:'grad',glyph:'ink',r:0},bg:'lt',round:1,sizes:[1024,180,120]},
+ {id:'dark',file:'tara-icon-dark',t:'Dark, gradient glyph',d:'Ink tile with ambient light. For dark mode and night-time UI.',o:{tile:'ink',glyph:'grad',r:58},bg:'lt',sizes:TILE_SIZES},
+ {id:'darkwhite',file:'tara-icon-dark-white',t:'Dark, white glyph',d:'Ink tile, white glyph. Quiet version for dense screens.',o:{tile:'ink',glyph:'white',r:58},bg:'lt',sizes:TILE_SIZES},
+ {id:'light',file:'tara-icon-light',t:'Light',d:'White tile, ink glyph. For light documents and receipts.',o:{tile:'light',glyph:'ink',r:58},bg:'chk',sizes:TILE_SIZES},
+ {id:'glyphblack',file:'tara-glyph-black',t:'Glyph, black',d:'Black glyph on transparent. Single-colour print, stamps, light backgrounds.',o:{tile:'none',glyph:'black',vb:'52 52 152 152'},bg:'chk',sizes:GLYPH_SIZES},
+ {id:'glyphwhite',file:'tara-glyph-white',t:'Glyph, white',d:'White glyph on transparent. For photos and dark backgrounds.',o:{tile:'none',glyph:'white',vb:'52 52 152 152'},bg:'dk',sizes:GLYPH_SIZES},
+ {id:'glyphgrad',file:'tara-glyph-gradient',t:'Glyph, gradient',d:'Brand gradient glyph on transparent. For dark backgrounds with room to glow.',o:{tile:'none',glyph:'grad',vb:'52 52 152 152'},bg:'dk',sizes:GLYPH_SIZES},
+ {id:'andfg',file:'android-adaptive-foreground',t:'Android foreground',d:'Adaptive icon layer 1. Glyph in the 66% safe zone, transparent.',o:{tile:'none',glyph:'ink',vb:'0 0 432 432',gt:AND},bg:'chk',sizes:[432,216]},
+ {id:'andbg',file:'android-adaptive-background',t:'Android background',d:'Adaptive icon layer 2. Full-bleed brand gradient.',o:{tile:'gradbg',glyph:'none',vb:'0 0 432 432'},bg:'lt',sizes:[432,216],noGlyph:1},
+ {id:'andmono',file:'android-adaptive-monochrome',t:'Android themed',d:'Monochrome layer for Android 13 and later themed icons.',o:{tile:'none',glyph:'black',vb:'0 0 432 432',gt:AND},bg:'chk',sizes:[432,216]}
+];
+// background-only variant draws no glyph
+const _iconSVG=iconSVG;
+iconSVG=function(o,px){const s=_iconSVG(o,px);return o.glyph==='none'?s.replace(/<path[^>]*d="[^"]*"[^>]*\/>/,''):s};
+const dataUri=s=>'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(s);
+
+
+/* ---------- print page content ---------- */
+document.getElementById('pIcons').innerHTML=VARIANTS.filter(v=>v.id!=='andfg'&&v.id!=='andbg'&&v.id!=='andmono').map(v=>`<article class="icard"><div class="pv ${v.bg}"><img class="${v.round?'round':''}" alt="${v.t} icon" src="${dataUri(iconSVG(v.o,240))}"></div><div class="inf"><b>${v.t}</b><p>${v.d}</p><span class="file">${v.file}</span></div></article>`).join('');
+
+const colours=[
+ {n:'Ink',h:'#0A0A0A',r:'Canvas, glyph, primary text'},{n:'Graphite',h:'#1A1D1F',r:'Dark surfaces'},{n:'Slate',h:'#4A5258',r:'Secondary text'},{n:'Fog',h:'#E6EBEC',r:'Borders and dividers'},{n:'Cloud',h:'#F4F8F7',r:'Light canvas'},
+ {n:'Aqua',h:'#46E6F2',r:'Info, focus, doors open'},{n:'Mint',h:'#36F58A',r:'Success, available, selected'},{n:'Lime',h:'#D4FF1F',r:'Scarcity, VIP, live state'},{n:'Lilac',h:'#C9B6FF',r:'Genre tags, 5% accent'},{n:'Error',h:'#FF5A5F',r:'Errors and sold out'},
+ {n:'White',h:'#FFFFFF',r:'Cards, tiles, light surfaces'},{n:'Aqua soft',h:'#7FE9F5',r:'Gradient start, hover tint'}
+];
+document.getElementById('pSw').innerHTML=
+ `<div class="sw wide"><div class="chip-area" style="background:var(--grad)"><em>135° · 7FE9F5 → 4DF59A → D4FF1F</em></div><div class="meta"><b>Brand gradient</b><span>Primary buttons, ticket header, featured cards</span></div></div>`+
+ `<div class="sw wide"><div class="chip-area" style="background:#0A0A0A;background-image:radial-gradient(70% 90% at 90% 0%,rgba(201,182,255,.45),transparent 70%),radial-gradient(70% 90% at 0% 100%,rgba(54,245,138,.5),transparent 70%)"><em>#0A0A0A + glow</em></div><div class="meta"><b>Ink stage</b><span>Night mode canvas with ambient light</span></div></div>`+
+ colours.map(c=>`<div class="sw"><div class="chip-area" style="background:${c.h}"><em>${c.h}</em></div><div class="meta"><b>${c.n}</b><span>${c.r}</span></div></div>`).join('');
+
+const tbody=document.querySelector('#ctable tbody');
+[['#0A0A0A','#36F58A','Ink on mint',13.75],['#0A0A0A','#D4FF1F','Ink on lime',17.09],['#0A0A0A','#46E6F2','Ink on aqua',13.07],['#0A0A0A','#C9B6FF','Ink on lilac',10.95],['#FFFFFF','#0A0A0A','White on ink',19.8],['#4A5258','#F4F8F7','Slate on cloud',7.43],['#FFFFFF','#36F58A','White on mint',1.44]].forEach(([f,b,l,s])=>{
+  const ok=s>=4.5;tbody.insertAdjacentHTML('beforeend',`<tr><td><span class="pair" style="color:${f};background:${b}">${l.split(' on ')[0]}</span> <span style="margin-left:6px;font-size:13.5px;color:var(--slate)">on ${l.split(' on ')[1]}</span></td><td class="score">${s.toFixed(2)}:1</td><td><span class="tag ${ok?'ok':'bad'}">${ok?(s>=7?'AAA':'AA'):'Do not use'}</span></td></tr>`);
+});
+
+const fig=(i)=>{const s=S[i];return `<figure class="fig"><div class="phone">${s.html}</div><figcaption><b>${s.t}</b><p>${s.d}</p><dl>${s.spec.map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('')}</dl></figcaption></figure>`};
+document.getElementById('pScA').innerHTML=[0,1,2].map(fig).join('');
+document.getElementById('pScB').innerHTML=[3,4,5].map(fig).join('');
+
+const row=(sw,n,v)=>`<div class="tr">${sw?`<i style="background:${sw}"></i>`:''}<b>${n}</b><span>${v}</span></div>`;
+document.getElementById('pTkC').innerHTML=[['Ink','#0A0A0A'],['Graphite','#1A1D1F'],['Slate','#4A5258'],['Fog','#E6EBEC'],['Cloud','#F4F8F7'],['Aqua','#46E6F2'],['Mint','#36F58A'],['Lime','#D4FF1F'],['Lilac','#C9B6FF'],['Error','#FF5A5F']].map(([n,h])=>row(h,n,h)).join('')+row('linear-gradient(135deg,#7FE9F5,#4DF59A 55%,#D4FF1F)','Gradient','135° · 3 stops');
+document.getElementById('pTkS').innerHTML=[['Radius small','10px'],['Radius medium','16px'],['Radius large','28px'],['Radius pill','9999px'],['Space xs / sm','4 / 8px'],['Space md / lg / xl','16 / 24 / 32px']].map(([n,v])=>row('',n,v)).join('');
+document.getElementById('pTkT').innerHTML=[['Display','Plus Jakarta Sans 800'],['Body','Inter 400 to 600'],['Codes','JetBrains Mono 700']].map(([n,v])=>row('',n,v)).join('');
+document.getElementById('pTkE').innerHTML=[['Card','0 1px 2px / 5%'],['Float','0 12px 32px / 8%'],['Glow mint','0 8px 24px / 35%'],['Glow lime','0 8px 24px / 32%'],['Modal','0 20px 48px / 14%']].map(([n,v])=>row('',n,v)).join('');
+document.getElementById('pTkA').innerHTML=[['Top inset','59px'],['Bottom inset','34px'],['Touch target','44 × 44px'],['Button height','48px'],['Focus ring','2px aqua']].map(([n,v])=>row('',n,v)).join('');
+</script>
+</body>
+</html>
